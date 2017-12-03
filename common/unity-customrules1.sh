@@ -1,4 +1,4 @@
-TIMEOFEXEC=2
+TIMEOFEXEC=3
 if [ "$ABI" == "arm" ]; then
   $CP_PRFX $INSTALLER/custom/lib/arm/libjamesdsp.so $UNITY$SYS/lib/soundfx/libjamesdsp.so
   $CP_PRFX $INSTALLER/custom/lib/arm/libjamesDSPImpulseToolbox.so $UNITY$SYS/lib/libjamesDSPImpulseToolbox.so
