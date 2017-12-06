@@ -6,3 +6,14 @@ else
   $CP_PRFX $INSTALLER/custom/lib/x86/libjamesdsp.so $UNITY$LIBDIR/lib/soundfx/libjamesdsp.so
   $CP_PRFX $INSTALLER/custom/lib/x86/libjamesDSPImpulseToolbox.so $UNITY$LIBDIR/lib/libjamesDSPImpulseToolbox.so
 fi
+# App only works when installed normally to data in oreo
+if $OREONEW; then
+  if $BOOTMODE; then SDCARD=/storage/emulated/0; else SDCARD=/data/media/0; fi
+  ui_print " "
+  ui_print "   Copying apk to root of internal storage (sdcard)"
+  ui_print "   Install apk after booting"
+  sleep 2
+  cp -f $INSTALLER/custom/JamesDSPManager/JamesDSPManager.apk $SDCARD/JamesDSPManager.apk
+else
+  custom_app_install JamesDSPManager
+fi
