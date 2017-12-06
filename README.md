@@ -16,6 +16,7 @@ This module enables JamesDSPManager. [More details in support thread](https://fo
 ## Change Log
 ### v1.6 - 11.30.2017
 * Updated to Unity/AML v2.5
+* Added permissions file for oreo
 
 ### v1.5 - 11.30.2017
 * Updated to Unity/AML v2.4
