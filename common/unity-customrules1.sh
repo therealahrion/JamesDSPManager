@@ -7,7 +7,7 @@ else
   $CP_PRFX $INSTALLER/custom/lib/x86/libjamesDSPImpulseToolbox.so $UNITY$LIBDIR/lib/libjamesDSPImpulseToolbox.so
 fi
 # App only works when installed normally to data in oreo
-if $OREONEW; then
+if [ $API -ge 26 ]; then
   if $BOOTMODE; then SDCARD=/storage/emulated/0; else SDCARD=/data/media/0; fi
   ui_print " "
   ui_print "   Copying apk to root of internal storage (sdcard)"
