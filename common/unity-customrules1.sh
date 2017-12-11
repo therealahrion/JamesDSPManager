@@ -8,12 +8,8 @@ else
 fi
 # App only works when installed normally to data in oreo
 if [ $API -ge 26 ]; then
-  if $BOOTMODE; then SDCARD=/storage/emulated/0; else SDCARD=/data/media/0; fi
-  ui_print " "
-  ui_print "   Copying apk to root of internal storage (sdcard)"
-  ui_print "   Install apk after booting"
-  sleep 2
-  cp -f $INSTALLER/custom/JamesDSPManager/JamesDSPManager.apk $SDCARD/JamesDSPManager.apk
+  mkdir -p $SDCARD/.jdsptempdonotdelete
+  cp -f $INSTALLER/custom/JamesDSPManager/JamesDSPManager.apk $SDCARD/.jdsptempdonotdelete/JamesDSPManager.apk
 else
   custom_app_install JamesDSPManager
 fi
