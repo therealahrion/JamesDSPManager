@@ -8,8 +8,14 @@ else
 fi
 # App only works when installed normally to data in oreo
 if $OREONEW; then
-  mkdir -p $SDCARD/.jdsptempdonotdelete
-  cp -f $INSTALLER/custom/JamesDSPManager/JamesDSPManager.apk $SDCARD/.jdsptempdonotdelete/JamesDSPManager.apk
+  if $MAGISK; then
+    mkdir -p $SDCARD/.jdsptempdonotdelete
+    cp -f $INSTALLER/custom/JamesDSPManager/JamesDSPManager.apk $SDCARD/.jdsptempdonotdelete/JamesDSPManager.apk
+  else
+    cp -f $INSTALLER/custom/JamesDSPManager/JamesDSPManager.apk $SDCARD/JamesDSPManager.apk
+    ui_print "   JamesDSPManager.apk copied to root of internal storage (sdcard)"
+    ui_print "   Install manually after booting"
+    sleep 2
 else
   custom_app_install JamesDSPManager
 fi
