@@ -6,3 +6,10 @@ else
   $CP_PRFX $INSTALLER/custom/lib/x86/libjamesdsp.so $UNITY$LIBDIR/lib/soundfx/libjamesdsp.so
   $CP_PRFX $INSTALLER/custom/lib/x86/libjamesDSPImpulseToolbox.so $UNITY$LIBDIR/lib/libjamesDSPImpulseToolbox.so
 fi
+# App only works when installed normally to data in oreo
+if [ $API -ge 26 ]; then
+  mkdir -p $SDCARD/.jdsptempdonotdelete
+  cp -f $INSTALLER/custom/JamesDSPManager/JamesDSPManager.apk $SDCARD/.jdsptempdonotdelete/JamesDSPManager.apk
+else
+  custom_app_install JamesDSPManager
+fi
