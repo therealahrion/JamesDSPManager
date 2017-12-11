@@ -6,4 +6,4 @@
 #MAXAPI=25
 AUDMODLIB=true
 if $BOOTMODE; then SDCARD=/storage/emulated/0; else SDCARD=/data/media/0; fi
-test $API -ge 26 && LATESTARTSERVICE=true
+$OREONEW && LATESTARTSERVICE=true
