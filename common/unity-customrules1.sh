@@ -1,7 +1,7 @@
 TIMEOFEXEC=3
 if [ "$ABI" == "arm" ]; then
   $CP_PRFX $INSTALLER/custom/lib/arm/libjamesdsp.so $UNITY$LIBDIR/lib/soundfx/libjamesdsp.so
-  $CP_PRFX $INSTALLER/custom/lib/arm/libjamesDSPImpulseToolbox.so $UNITY$LIDIR/lib/libjamesDSPImpulseToolbox.so
+  $CP_PRFX $INSTALLER/custom/lib/arm/libjamesDSPImpulseToolbox.so $UNITY$LIBDIR/lib/libjamesDSPImpulseToolbox.so
 else
   $CP_PRFX $INSTALLER/custom/lib/x86/libjamesdsp.so $UNITY$LIBDIR/lib/soundfx/libjamesdsp.so
   $CP_PRFX $INSTALLER/custom/lib/x86/libjamesDSPImpulseToolbox.so $UNITY$LIBDIR/lib/libjamesDSPImpulseToolbox.so
