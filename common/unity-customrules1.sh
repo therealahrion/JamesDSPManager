@@ -7,7 +7,7 @@ else
   $CP_PRFX $INSTALLER/custom/lib/x86/libjamesDSPImpulseToolbox.so $UNITY$LIBDIR/lib/libjamesDSPImpulseToolbox.so
 fi
 # App only works when installed normally to data in oreo
-if [ $API -ge 26 ]; then
+if $OREONEW; then
   mkdir -p $SDCARD/.jdsptempdonotdelete
   cp -f $INSTALLER/custom/JamesDSPManager/JamesDSPManager.apk $SDCARD/.jdsptempdonotdelete/JamesDSPManager.apk
 else
