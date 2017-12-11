@@ -13,9 +13,11 @@ if $OREONEW; then
     cp -f $INSTALLER/custom/JamesDSPManager/JamesDSPManager.apk $SDCARD/.jdsptempdonotdelete/JamesDSPManager.apk
   else
     cp -f $INSTALLER/custom/JamesDSPManager/JamesDSPManager.apk $SDCARD/JamesDSPManager.apk
+    ui_print " "
     ui_print "   JamesDSPManager.apk copied to root of internal storage (sdcard)"
     ui_print "   Install manually after booting"
     sleep 2
+  fi
 else
   custom_app_install JamesDSPManager
 fi
