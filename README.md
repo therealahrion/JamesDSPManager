@@ -1,16 +1,13 @@
 # Ainur JamesDSPManager
 This module enables JamesDSPManager. [More details in support thread](https://forum.xda-developers.com/android/software/soundmod-ainur-audio-t3450516).
 
-### Dependencies
-* [Audio Modification Library](https://forum.xda-developers.com/apps/magisk/module-audio-modification-library-t3579612) @ XDA Developers
-
 ## Compatibility
 * Android Jellybean+
 * Selinux enforcing
 * All root solutions (requires init.d support if not using magisk or supersu. Try [Init.d Injector](https://forum.xda-developers.com/android/software-hacking/mod-universal-init-d-injector-wip-t3692105))
 
 ## Change Log
-### v1.0 - 
+### v1.0 - 2.5.2018
 * Initial rerelease
 
 ## Credits
