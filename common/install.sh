@@ -24,7 +24,7 @@ for FILE in ${CFGS}; do
   $MAGISK && cp_ch $ORIGDIR$FILE $UNITY$FILE
   case $FILE in
     *.conf) [ ! "$(grep '^ *# *music_helper {' $UNITY$FILE)" -a "$(grep '^ *music_helper {' $UNITY$FILE)" ] && sed -i "/effects {/,/^}/ {/music_helper {/,/}/ s/^/#/g}" $UNITY$FILE
-            [ ! "$(grep '^ *# *sa3d {' $UNITY$FILE)" -a "$(grep '^ *sa3d {' $UNITY$FILE)" ] && sed -i "/effects {/,/^}/ {/sa3d {/,/}/ s/^/#/g}" $UNITY$FILE
+            [ ! "$(grep '^ *# *sa3d {' $UNITY$FILE)" -a "$(grep '^ *sa3d {' $UNITY$FILE)" ] && sed -i "/effects {/,/^}/ {/sa3d {/,/^  }/ s/^/#/g}" $UNITY$FILE
             sed -i "/jamesdsp {/,/}/d" $UNITY$FILE
             sed -i "/jdsp {/,/}/d" $UNITY$FILE
             sed -i "s/^effects {/effects {\n  jamesdsp { #$MODID\n    library jdsp\n    uuid f27317f4-c984-4de6-9a90-545759495bf2\n  } #$MODID/g" $UNITY$FILE
