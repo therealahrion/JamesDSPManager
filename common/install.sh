@@ -16,7 +16,7 @@ if [ $API -ge 26 ]; then
 fi
 ui_print "   Patching existing audio_effects files..."
 # Create vendor audio_effects.conf if missing
-if $MAGISK && [ -f $ORIGDIR/system/etc/audio_effects.conf ] && [ ! -f $ORIGDIR/system/vendor/etc/audio_effects.conf ] && [ ! -f $ORIGDIR/system/vendor/etc/audio_effects.xml ]; then
+if [ -f $ORIGDIR/system/etc/audio_effects.conf ] && [ ! -f $ORIGDIR/system/vendor/etc/audio_effects.conf ] && [ ! -f $ORIGDIR/system/vendor/etc/audio_effects.xml ]; then
   cp_ch $ORIGDIR/system/etc/audio_effects.conf $UNITY/system/vendor/etc/audio_effects.conf
   CFGS="${CFGS} /system/vendor/etc/audio_effects.conf"
 fi
