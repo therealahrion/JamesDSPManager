@@ -34,9 +34,9 @@ chooseportold() {
   $INSTALLER/common/keycheck
   $INSTALLER/common/keycheck
   SEL=$?
-  if [ $1 == "UP" ]; then
+  if [ "$1" == "UP" ]; then
     UP=$SEL
-  elif [ $1 == "DOWN" ]; then
+  elif [ "$1" == "DOWN" ]; then
     DOWN=$SEL
   elif [ $SEL -eq $UP ]; then
     return 0
