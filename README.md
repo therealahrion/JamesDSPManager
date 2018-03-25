@@ -9,6 +9,7 @@ This module enables JamesDSPManager. [More details in support thread](https://fo
 ## Change Log
 ### v1.5.4 - 3.xx.2018
 * Add soundalive and dha effect removal (needed for some samsung devices)
+* Fix permissions for prop files on system installs
 
 ### v1.5.3 - 3.18.2018
 * Unity v1.4 update
