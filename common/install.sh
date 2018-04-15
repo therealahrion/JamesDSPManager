@@ -13,6 +13,19 @@ osp_detect() {
   esac
 }
 
+# Tell user aml is needed if applicable
+if $MAGISK; then
+  if $BOOTMODE; then LOC="/sbin/.core/img/*/system $MOUNTPATH/*/system"; else LOC="$MOUNTPATH/*/system"; fi
+  FILES=$(find $LOC -type f -name "*audio_effects*.conf" -o -name "*audio_effects*.xml")
+  if [ ! -z "$FILES" ] && [ ! "$(echo $FILES | grep '/aml/')" ]; then
+    ui_print " "
+    ui_print "   ! Conflicting audio mod found!"
+    ui_print "   ! You will need to install !"
+    ui_print "   ! Audio Modification Library !"
+    sleep 3
+  fi
+fi
+
 # GET HQ/SQ FROM ZIP NAME
 case $(basename $ZIP) in
   *sq*|*Sq*|*SQ*) QUAL=sq;;
@@ -28,7 +41,7 @@ keytest() {
   (/system/bin/getevent -lc 1 2>&1 | /system/bin/grep VOLUME | /system/bin/grep " DOWN" > $INSTALLER/events) || return 1
   return 0
 }   
-                                                                            
+
 chooseport() {
   #note from chainfire @xda-developers: getevent behaves weird when piped, and busybox grep likes that even less than toolbox/toybox grep
   while (true); do
