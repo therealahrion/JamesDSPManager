@@ -109,7 +109,7 @@ if [ $API -ge 26 ]; then
   cp -f $INSTALLER/system/app/JamesDSPManager/JamesDSPManager.apk $SDCARD/JamesDSPManager.apk
   if $BOOTMODE; then
     ui_print " "
-    ui_print "   Installing JamesDSPManager apk..." 2&1 > /dev/null
+    ui_print "   Installing JamesDSPManager apk..."
     pm install $INSTALLER/system/app/JamesDSPManager/JamesDSPManager.apk >/dev/null 2>&1
     ui_print "   JamesDSPManager.apk copied to root of internal storage (sdcard)"
     ui_print "   Install manually if apk install didn't work"
