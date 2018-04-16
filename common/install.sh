@@ -40,7 +40,7 @@ keytest() {
   ui_print "   Press Vol Up:"
   (/system/bin/getevent -lc 1 2>&1 | /system/bin/grep VOLUME | /system/bin/grep " DOWN" > $INSTALLER/events) || return 1
   return 0
-}   
+}
 
 chooseport() {
   #note from chainfire @xda-developers: getevent behaves weird when piped, and busybox grep likes that even less than toolbox/toybox grep
@@ -93,9 +93,9 @@ if [ -z $QUAL ]; then
   ui_print "- Select Driver -"
   ui_print "   Choose which drivers you want installed:"
   ui_print "   Vol Up = HQ, Vol Down = SQ"
-  if $FUNCTION; then 
+  if $FUNCTION; then
     QUAL=hq
-  else 
+  else
     QUAL=sq
   fi
 else
@@ -107,10 +107,19 @@ cp_ch $INSTALLER/custom/$ABI/libjamesDSPImpulseToolbox.so $INSTALLER/system/lib/
 # App only works when installed normally to data in oreo
 if [ $API -ge 26 ]; then
   cp -f $INSTALLER/system/app/JamesDSPManager/JamesDSPManager.apk $SDCARD/JamesDSPManager.apk
-  ui_print " "
-  ui_print "   JamesDSPManager.apk copied to root of internal storage (sdcard)"
-  ui_print "   Install manually after booting"
-  sleep 2
+  if $BOOTMODE; then
+    ui_print " "
+    ui_print "   Installing JamesDSPManager apk..." 2&1 > /dev/null
+    pm install $INSTALLER/system/app/JamesDSPManager/JamesDSPManager.apk >/dev/null 2>&1
+    ui_print "   JamesDSPManager.apk copied to root of internal storage (sdcard)"
+    ui_print "   Install manually if apk install didn't work"
+    sleep 2
+  else
+    ui_print " "
+    ui_print "   JamesDSPManager.apk copied to root of internal storage (sdcard)"
+    ui_print "   Install manually after booting"
+    sleep 2
+  fi
   rm -rf $INSTALLER/system/app
 fi
 ui_print "   Patching existing audio_effects files..."
