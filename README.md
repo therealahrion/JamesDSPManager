@@ -10,6 +10,7 @@ This module enables JamesDSPManager. [More details in support thread](https://fo
 ### v1.6 - 4.xx.2018
 * Unity v1.5.2 update
 * Add AML detection/notification
+* Add auto install for apk if in bootmode
 
 ### v1.5.9 - 4.12.2018
 * Reworking/fixing of audio file patching
