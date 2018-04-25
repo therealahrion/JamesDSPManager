@@ -125,7 +125,7 @@ fi
 ui_print "   Patching existing audio_effects files..."
 for OFILE in ${CFGS}; do
   FILE="$UNITY$(echo $OFILE | sed "s|^/vendor|/system/vendor|g")"
-  cp_ch_nb $ORIGDIR$OFILE $FILE
+  cp_ch_nb $ORIGDIR$OFILE $FILE 0644 false
   osp_detect $FILE
   case $FILE in
     *.conf) sed -i "/jamesdsp {/,/}/d" $FILE
