@@ -27,6 +27,7 @@ if $MAGISK && ! $SYSOVERRIDE; then
 fi
 
 # GET HQ/SQ AND HUAWEI FROM ZIP NAME
+OIFS=$IFS; IFS=\|
 case $(basename $ZIP) in
   *sq*|*Sq*|*SQ*) QUAL=sq;;
   *hq*|*Hq*|*HQ*) QUAL=hq;;
@@ -35,6 +36,7 @@ case $(basename $ZIP) in
   *HUA*|*Hua*|*hua*) HUAWEI=true;;
   *NHUA*|*Nhua*|*nhua*) HUAWEI=false;;
 esac
+IFS=$OIFS
 
 # Keycheck binary by someone755 @Github, idea for code below by Zappo @xda-developers
 chmod 755 $INSTALLER/common/keycheck
@@ -157,11 +159,17 @@ fi
 
 # Lib fix for pixel 2's, 3's, and essential phone
 if device_check "walleye" || device_check "taimen" || device_check "crosshatch" || device_check "blueline" || device_check "mata"; then
+  echo "1"
   if [ -f /system/lib/libstdc++.so ] && [ ! -f $VEN/lib/libstdc++.so ]; then
+    echo "1a"
     cp_ch /system/lib/libstdc++.so $UNITY$VEN/lib/libstdc++.so
   elif [ -f $VEN/lib/libstdc++.so ] && [ ! -f /system/lib/libstdc++.so ]; then
+    echo "1b"
     cp_ch $VEN/lib/libstdc++.so $UNITY/system/lib/libstdc++.so
   fi
+  ls /system
+  echo " "
+  ls $VEN/lib
 fi
 
 ui_print "   Patching existing audio_effects files..."
