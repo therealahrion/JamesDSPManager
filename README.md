@@ -13,7 +13,7 @@ With virtual surround spatializer. You device sample rate should process under 4
 
 ## Change Log
 ### v1.8.1 - 12.9.2018
-* Unity v1.8.1 update
+* Unity v1.8.2 update
 * Fixed limitation in zipname triggers - you can use spaces in the zipname now and trigger is case insensitive
 
 ### v1.8 - 11.21.2018
