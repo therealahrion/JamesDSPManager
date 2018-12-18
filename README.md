@@ -12,8 +12,8 @@ With virtual surround spatializer. You device sample rate should process under 4
 * All root solutions (requires init.d support if not using magisk or supersu. Try [Init.d Injector](https://forum.xda-developers.com/android/software-hacking/mod-universal-init-d-injector-wip-t3692105))
 
 ## Change Log
-### v1.9 - 12.xx.2018
-* Unity v1.8.2 update
+### v1.9 - 12.18.2018
+* Unity v2.0 update
 * Fixed limitation in zipname triggers - you can use spaces in the zipname now and trigger is case insensitive
 * Improved boot script for user app install - should fix bootloop issues
 
