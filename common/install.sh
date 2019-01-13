@@ -29,8 +29,8 @@ fi
 # GET HQ/SQ AND HUAWEI FROM ZIP NAME
 OIFS=$IFS; IFS=\|
 case $(echo $(basename $ZIPFILE) | tr '[:upper:]' '[:lower:]') in
-  *sq*) QUAL=sq;;
-  *hq*) QUAL=hq;;
+  *ff*) QUAL=ff;;
+  *bp*) QUAL=bp;;
 esac
 case $(echo $(basename $ZIPFILE) | tr '[:upper:]' '[:lower:]') in
   *nhua*) HUAWEI=false;;
@@ -43,12 +43,12 @@ if [ -z $QUAL ] || [ -z $HUAWEI ]; then
   if [ -z $QUAL ]; then
     ui_print "- Select Driver -"
     ui_print "   Choose which drivers you want installed:"
-    ui_print "   Vol Up = HQ (Slow, bit perfect)"
-    ui_print "   Vol Down = SQ (Fast, full feature)"
+    ui_print "   Vol Down = Full feature (Highly recommended)"
+    ui_print "   Vol Up = Bit perfect"
     if $VKSEL; then
-      QUAL=hq
+      QUAL=ff
     else
-      QUAL=sq
+      QUAL=bp
     fi
   else
     ui_print "   Driver quality specified in zipname!"
@@ -70,10 +70,10 @@ else
   ui_print "   Options specified in zipname!"
 fi
 
-if [ "$QUAL" == "hq" ]; then
-  ui_print "   High Quality drivers selected!"
+if [ "$QUAL" == "ff" ]; then
+  ui_print "   Full feature drivers selected!"
 else
-  ui_print "   Standard Quality drivers selected!"
+  ui_print "   Bit perfect drivers selected!"
 fi
 
 tar -xf $INSTALLER/custom/$QUAL.tar.xz -C $INSTALLER/custom 2>/dev/null
