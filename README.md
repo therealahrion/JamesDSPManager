@@ -14,6 +14,7 @@ Double precision (float64) processing. Note that some features are missing from 
 ## Change Log
 ### v1.9.8 - x.xx.2019
 * Added Zuk Z2 Pro to lib workaround
+* Unity v3.3 update
 
 ### v1.9.7 - 1.16.2019
 * Forgot to move apk back to priv-app (needed for unity 3.2)
