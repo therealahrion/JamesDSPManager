@@ -12,8 +12,9 @@ Double precision (float64) processing. Note that some features are missing from 
 * All root solutions (requires init.d support if not using magisk or supersu. Try [Init.d Injector](https://forum.xda-developers.com/android/software-hacking/mod-universal-init-d-injector-wip-t3692105))
 
 ## Change Log
-### vx.x.x - x.x.2019
+### v2.0 - 3.28.2019
 * Don't prompt for lib workaround if device that needs it
+* Update to unity v4.0
 
 ### v1.9.8 - 2.21.2019
 * Added Samsung Galaxy S9 and Zuk Z2 Pro to lib workaround
