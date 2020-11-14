@@ -42,7 +42,7 @@ else
   ui_print "   Choose which drivers you want installed:"
   ui_print "   Vol Up = Full feature (Highly recommended)"
   ui_print "   Vol Down = Bit perfect"
-  if chooseport; then
+  if chooseport 5; then
     QUAL=ff
   else
     QUAL=bp
@@ -51,7 +51,7 @@ else
   ui_print " - Use lib workaround? -"
   ui_print "   Only choose yes if you're having issues"
   ui_print "   Vol+ = yes, Vol- = no (recommended)"
-  if chooseport; then
+  if chooseport 5; then
     LIBWA=true
   else
     LIBWA=false
