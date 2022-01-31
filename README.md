@@ -1,3 +1,6 @@
+# Deprecated
+See [this repo](https://github.com/Zackptg5/JamesDSPManager) for updated version
+
 # JamesDSPManager
 This module enables JamesDSPManager. [More details in support thread](https://forum.xda-developers.com/android/apps-games/app-reformed-dsp-manager-t3607970).
 
